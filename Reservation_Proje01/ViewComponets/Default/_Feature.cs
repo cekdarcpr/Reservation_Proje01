@@ -9,9 +9,10 @@ namespace Reservation_Proje01.ViewComponets.Default
         FeatureManager featureManager = new FeatureManager(new EfFeatureDal());
         public IViewComponentResult Invoke()
         {
-            var values = featureManager.GetList();
+           // var values = featureManager.GetList();
+           // ViewBag.image1=
 
-            return View(values);
+            return View();
         }
     }
 }
