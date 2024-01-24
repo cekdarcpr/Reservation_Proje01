@@ -17,6 +17,8 @@ namespace Reservation_Proje01.Controllers
         [HttpGet]
         public IActionResult DestinationDetails(int id)
         {
+            ViewBag.i = id;
+
             var values= destinationManger.TGetByID(id);
 
             return View(values);
