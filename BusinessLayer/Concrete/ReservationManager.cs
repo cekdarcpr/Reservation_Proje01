@@ -16,16 +16,26 @@ namespace BusinessLayer.Concrete
         public ReservationManager(IReservationDal reservationDal)
         {
             _reservationDal = reservationDal;
-        }
+        } 
 
         public List<Reservation> GetList()
         {
             throw new NotImplementedException();
         }
 
-        public List<Reservation> GetListApprovalReservation(int id)
+        public List<Reservation> GetListWithReservationByAccepted(int id)
         {
-            return _reservationDal.GetListByFilter(x => x.AppUserId == id);
+            return _reservationDal.GetListWithReservationByAccepted(id);
+        }
+
+        public List<Reservation> GetListWithReservationByPervious(int id)
+        {
+            return _reservationDal.GetListWithReservationByPervious(id);
+        }
+
+        public List<Reservation> GetListWithvalReservationByWaitApproval(int id)
+        {
+            return _reservationDal.GetListWithvalReservationByWaitApproval(id);
         }
 
         public void TAdd(Reservation t)

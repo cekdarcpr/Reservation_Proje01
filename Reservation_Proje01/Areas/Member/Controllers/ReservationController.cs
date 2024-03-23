@@ -22,18 +22,22 @@ namespace Reservation_Proje01.Areas.Member.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult MyCurrentReservation() 
+        public async Task<IActionResult> MyCurrentReservation() 
         {
-            return View(); 
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var valuesList = reservationManager.GetListWithReservationByAccepted(values.Id);
+            return View(valuesList);
         }
-        public IActionResult MyOldReservation()
+        public async Task<IActionResult> MyOldReservation()
         {
-            return View();
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var valuesList = reservationManager.GetListWithReservationByPervious(values.Id);
+            return View(valuesList);
         }
         public async Task<IActionResult> MyApprovalReservation()
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
-            var valuesList = reservationManager.GetListApprovalReservation(values.Id);
+            var valuesList = reservationManager.GetListWithvalReservationByWaitApproval(values.Id);
             return View(valuesList);
         }
 
