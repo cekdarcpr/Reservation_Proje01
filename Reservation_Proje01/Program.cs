@@ -1,4 +1,9 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using BusinessLayer.Container;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -16,6 +21,9 @@ namespace Reservation_Proje01
             builder.Services.AddDbContext<Context>();
             builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>()
             .AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
+
+            builder.Services.ContainerDependencies();
+
             builder.Services.AddControllersWithViews();
            
             builder.Services.AddMvc(config =>
