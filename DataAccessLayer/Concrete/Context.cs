@@ -13,7 +13,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-3RDN6LK\\SQLEXPRESS;database=ReservationDb;integrated security=true;");
+            optionsBuilder.UseSqlServer("server=DESKTOP-KNM9LLL\\SQLEXPRESS;database=ReservationDb;integrated security=true;");
         }
 
         public DbSet<About> Abouts { get; set; }
