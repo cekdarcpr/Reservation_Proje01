@@ -36,19 +36,19 @@
             @{
                 if (item.Status == true)
                 {
-                    <td><a href="#" class="btn btn-outline-warning">Pasif Yap</a></td>
+                    <td><a href="/Admin/Guide/ChangeToFalse/@item.GuideID" class="btn btn-outline-warning">Pasif Yap</a></td>
                 }
                 else
                 {
-                    <td><a href="#" class="btn btn-outline-info">Aktif Yap</a></td>
+                    <td><a href="/Admin/Guide/ChangeToTrue/@item.GuideID" class="btn btn-outline-info">Aktif Yap</a></td>
                 }
             }
 
-            <td><a class="btn btn-outline-success" href="#">Düzenle</a></td>
+            <td><a class="btn btn-outline-success" href="/Admin/Guide/EditGuide/">Düzenle</a></td>
         </tr>
 
     }
 </table>
 <br />
-<a href="/Admin/Guide/AddGuide" class="btn btn-outline-primary">Yeni Rehber Ekle</a>
+<a href="/Admin/Guide/AddGuide/" class="btn btn-outline-primary">Yeni Rehber Ekle</a>
 
