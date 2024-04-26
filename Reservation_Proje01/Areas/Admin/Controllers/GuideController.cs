@@ -52,6 +52,7 @@ namespace Reservation_Proje01.Areas.Admin.Controllers
 
 
         }
+
         [Route("EditGuide")]
         [HttpGet]
         public IActionResult EditGuide(int id)
@@ -79,5 +80,6 @@ namespace Reservation_Proje01.Areas.Admin.Controllers
             _guideService.TChangeToFalseByGuide(id);
             return RedirectToAction("Index", "Guide", new { area = "Admin" });
         }
+
     }
 }
