@@ -1,10 +1,14 @@
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using BusinessLayer.Container;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using DTOLayer.DTOs.AnnouncementDTOs;
 using EntityLayer.Concrete;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Reservation_Proje01.Models;
@@ -23,6 +27,11 @@ namespace Reservation_Proje01
             .AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
 
             builder.Services.ContainerDependencies();
+
+            builder.Services.AddAutoMapper(typeof(Program));
+            builder.Services.AddTransient<IValidator<AnnouncementAddDTO>, AnnouncementValidator>();
+
+            builder.Services.AddControllersWithViews().AddFluentValidation();
 
             builder.Services.AddControllersWithViews();
            
