@@ -10,13 +10,20 @@ namespace Reservation_Proje01.Mapping.AutoMapperProfile
         public MapProfile()
         {
             CreateMap<AnnouncementAddDTO, Announcement>();
-            CreateMap<Announcement,  AnnouncementAddDTO>();
+            CreateMap<Announcement, AnnouncementAddDTO>();
 
             CreateMap<AppUserRegisterDTO, AppUser>();
             CreateMap<AppUser, AppUserRegisterDTO>();
 
             CreateMap<AppUserLoginDTO, AppUser>();
             CreateMap<AppUser, AppUserLoginDTO>();
+
+            CreateMap<AnnouncementListDTO, Announcement>();
+            CreateMap<Announcement, AnnouncementListDTO>();
+
+            CreateMap<AnnouncementUpdateDTO, Announcement>();
+            CreateMap<Announcement, AnnouncementUpdateDTO>();
+
         }
     }
 }
