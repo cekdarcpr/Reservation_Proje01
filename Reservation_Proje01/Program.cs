@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Reservation_Proje01.CQRS.Handlers.DestinationHandler;
 using Reservation_Proje01.Models;
 
 namespace Reservation_Proje01
@@ -13,6 +14,12 @@ namespace Reservation_Proje01
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddScoped<GetAllDestinationQueryHandler>();
+            builder.Services.AddScoped<GetDestinationByIdQueryHandler>();
+            builder.Services.AddScoped<CreateDestinationCommandHandler>();
+            builder.Services.AddScoped<RemoveDestinationCommandHandler>();
+            builder.Services.AddScoped<UpdateDestinationCommandHandler>();
 
             // Add services to the container.
             builder.Services.AddDbContext<Context>();
