@@ -10,8 +10,9 @@ namespace Reservation_Proje01.Controllers
         CommentManager commentManager = new CommentManager(new EfCommentDal());
 
         [HttpGet]
-        public PartialViewResult AddComment()
+        public PartialViewResult AddComment(int id)
         {
+            ViewBag.destID = id;
             return PartialView();
         }
         [HttpPost]
