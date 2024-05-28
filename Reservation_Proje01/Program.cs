@@ -50,6 +50,11 @@ namespace Reservation_Proje01
             });
 
             builder.Services.AddMvc();
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Login/SignIn/";
+            });
             
 
             var app = builder.Build();
