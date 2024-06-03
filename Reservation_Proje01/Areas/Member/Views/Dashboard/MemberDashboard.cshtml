@@ -59,85 +59,15 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-language nav-item">
-                            <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown-flag">
-                                <div class="arrow_box"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i> Russian</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-es"></i> Spanish</a></div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-notification nav-item">
-                            <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read       </a></div>
-                            </div>
-                        </li>
-                        <li class="dropdown dropdown-user nav-item">
-                            <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="~/member/theme-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right">
-                                    <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="~/member/theme-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><span class="user-name text-bold-700 ml-1">John Doe</span></span></a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a><a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-power"></i> Logout</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    @await Component.InvokeAsync("_MemberLayoutLanguages")
+                    @await Component.InvokeAsync("_MemberLayoutNavbar")
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-
-
-    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="~/member/theme-assets/images/backgrounds/02.jpg">
-        <div class="navbar-header">
-            <ul class="nav navbar-nav flex-row">
-                <li class="nav-item mr-auto">
-                    <a class="navbar-brand" href="index.html">
-                        <img class="brand-logo" alt="Chameleon admin logo" src="~/member/theme-assets/images/logo/logo.png" />
-                        <h3 class="brand-text">Member</h3>
-                    </a>
-                </li>
-                <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
-            </ul>
-        </div>
-        <div class="main-menu-content">
-            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="active">
-                    <a href="index.html"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
-                </li>
-                <li class=" nav-item">
-                    <a href="charts.html"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Charts</span></a>
-                </li>
-                <li class=" nav-item">
-                    <a href="icons.html"><i class="ft-droplet"></i><span class="menu-title" data-i18n="">Icons</span></a>
-                </li>
-                <li class=" nav-item">
-                    <a href="cards.html"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Cards</span></a>
-                </li>
-                <li class=" nav-item">
-                    <a href="buttons.html"><i class="ft-box"></i><span class="menu-title" data-i18n="">Buttons</span></a>
-                </li>
-                <li class=" nav-item">
-                    <a href="typography.html"><i class="ft-bold"></i><span class="menu-title" data-i18n="">Typography</span></a>
-                </li>
-                <li class=" nav-item">
-                    <a href="tables.html"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Tables</span></a>
-                </li>
-                <li class=" nav-item">
-                    <a href="form-elements.html"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Form Elements</span></a>
-                </li>
-                <li class=" nav-item">
-                    <a href="https://themeselection.com/demo/chameleon-admin-template/documentation"><i class="ft-book"></i><span class="menu-title" data-i18n="">Documentation</span></a>
-                </li>
-            </ul>
-        </div><a class="btn btn-danger btn-block btn-glow btn-upgrade-pro mx-1" href="https://themeselection.com/products/chameleon-admin-modern-bootstrap-webapp-dashboard-html-template-ui-kit/" target="_blank">Download PRO!</a>
-        <div class="navigation-background"></div>
-    </div>
+    @await Component.InvokeAsync("_MemberLayoutSidebar")
 
     <div class="app-content content">
         <div class="content-wrapper">
@@ -205,11 +135,11 @@
                     <div class="col-xl-4 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="heading-multiple-thumbnails">Multiple Thumbnail</h4>
+                                <h4 class="card-title" id="heading-multiple-thumbnails">Profil</h4>
                                 <a class="heading-elements-toggle">
                                     <i class="la la-ellipsis-v font-medium-3"></i>
                                 </a>
-                                <div class="heading-elements">
+                            @*     <div class="heading-elements">
                                     <span class="avatar">
                                         <img src="~/member/theme-assets/images/portrait/small/avatar-s-2.png" alt="avatar">
                                     </span>
@@ -219,7 +149,7 @@
                                     <span class="avatar">
                                         <img src="~/member/theme-assets/images/portrait/small/avatar-s-4.png" alt="avatar">
                                     </span>
-                                </div>
+                                </div> *@
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
@@ -241,8 +171,8 @@
                         <div class="card">
                             <div class="card-content">
                                 <div class="card-body">
-                                    <h4 class="card-title">Recent products</h4>
-                                    <h6 class="card-subtitle text-muted">Carousel Card With Header & Footer</h6>
+                                    <h4 class="card-title">Sizden Gelenler</h4>
+                                    <h6 class="card-subtitle text-muted">Misafirlerimizden gelen resimler...</h6>
                                 </div>
                                 <div id="carousel-area" class="carousel slide" data-ride="carousel">
                                     <ol class="carousel-indicators">
@@ -286,36 +216,23 @@
                     </div>
                     @await Component.InvokeAsync("_GuideList");
                 </div>
-                <!--/ Statistics -->
             </div>
         </div>
     </div>
-    <!-- ////////////////////////////////////////////////////////////////////////////-->
-
 
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
         <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-            <span class="float-md-left d-block d-md-inline-block">2018  &copy; Copyright <a class="text-bold-800 grey darken-2" href="https://themeselection.com" target="_blank">ThemeSelection</a></span>
-            <ul class="list-inline float-md-right d-block d-md-inline-blockd-none d-lg-block mb-0">
-                <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/" target="_blank"> More themes</a></li>
-                <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/support" target="_blank"> Support</a></li>
-                <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/products/chameleon-admin-modern-bootstrap-webapp-dashboard-html-template-ui-kit/" target="_blank"> Purchase</a></li>
-            </ul>
+            <span class="float-md-left d-block d-md-inline-block">@DateTime.Now.Year  &copy; Copyright <a class="text-bold-800 grey darken-2" href="https://github.com/cekdarcpr" target="_blank">Cekdar CAPAR</a></span>
+
         </div>
     </footer>
 
-    <!-- BEGIN VENDOR JS-->
+
     <script src="~/member/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
-    <!-- BEGIN VENDOR JS-->
-    <!-- BEGIN PAGE VENDOR JS-->
     <script src="~/member/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
-    <!-- END PAGE VENDOR JS-->
-    <!-- BEGIN CHAMELEON  JS-->
     <script src="~/member/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
     <script src="~/member/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
-    <!-- END CHAMELEON  JS-->
-    <!-- BEGIN PAGE LEVEL JS-->
     <script src="~/member/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL JS-->
+
 </body>
 </html>
